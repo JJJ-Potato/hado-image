@@ -15,18 +15,18 @@
   --text: #2b3350;
 
   --size-title: 50px;
-  --size-flow: 20px;
-  --size-basis: 18px;
-  --size-card-name: 23px;
-  --size-desc: 17px;
-  --size-time: 19px;
-  --size-time-after: 26px;
-  --size-illust-label: 13px;
-  --size-table-head: 20px;
-  --size-table: 17px;
+  --size-flow: 23px;
+  --size-basis: 21px;
+  --size-card-name: 25px;
+  --size-desc: 21px;
+  --size-time: 21px;
+  --size-time-after: 29px;
+  --size-illust-label: 16px;
+  --size-table-head: 23px;
+  --size-table: 20px;
   --size-stat-value: 58px;
   --size-stat-sub: 36px;
-  --size-stat-caption: 17px;
+  --size-stat-caption: 20px;
 }
 
 body {
@@ -107,8 +107,8 @@ body {
   color: var(--navy);
 }
 .flow-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--navy);
   color: #fff;
@@ -139,7 +139,7 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.basis svg { width: 22px; height: 22px; }
+.basis svg { width: 24px; height: 24px; }
 
 .cards {
   flex: 1;
@@ -203,8 +203,9 @@ body {
   text-align: center;
   font-size: var(--size-desc);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.4;
   word-break: keep-all;
+  text-wrap: balance;
 }
 .time {
   flex: none;
@@ -218,7 +219,7 @@ body {
   gap: 10px;
   font-weight: 700;
 }
-.time svg { width: 24px; height: 24px; color: var(--green); }
+.time svg { width: 26px; height: 26px; color: var(--green); }
 .time-before { font-size: var(--size-time); color: var(--gray-text); font-weight: 500; }
 .time-arrow { font-family: "Pretendard", sans-serif; font-size: var(--size-time); color: var(--green); }
 .time-after { font-size: var(--size-time-after); color: var(--green); }
@@ -236,7 +237,7 @@ body {
   gap: 8px;
 }
 .eng-card {
-  width: 116px;
+  width: 122px;
   height: 128px;
   border: 1.5px solid var(--navy-line);
   border-radius: 10px;
@@ -270,8 +271,8 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 7px 16px;
+  gap: 3px;
+  padding: 6px 16px;
   background: #fff;
   border: 1.5px solid var(--navy-line);
   border-radius: 8px;
@@ -284,11 +285,11 @@ body {
   font-weight: 500;
   color: var(--navy);
 }
-.eng-checks svg { width: 16px; height: 16px; }
+.eng-checks svg { width: 18px; height: 18px; }
 
 /* 카드④ 간접비 일러스트 */
 .sheet {
-  width: 272px;
+  width: 290px;
   background: #fff;
   border: 1.5px solid var(--navy-line);
   border-radius: 10px;
@@ -319,7 +320,7 @@ body {
 .sheet-row {
   height: 42px;
   display: grid;
-  grid-template-columns: 82px 1fr 26px;
+  grid-template-columns: 100px 1fr 26px;
   align-items: center;
   gap: 8px;
   padding: 0 4px;
@@ -358,7 +359,7 @@ body {
 }
 .compare {
   display: grid;
-  grid-template-columns: 116px 1fr 44px 1.2fr;
+  grid-template-columns: 112px 1fr 40px 1.3fr;
   grid-template-rows: 46px repeat(4, 1fr);
   gap: 7px 8px;
 }
@@ -389,9 +390,11 @@ body {
   color: var(--gray-text);
   font-size: var(--size-table);
   font-weight: 500;
+  line-height: 1.35;
+  word-break: keep-all;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 .compare-arrow {
   display: grid;
@@ -409,9 +412,11 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 18px;
+  padding: 0 14px;
+  line-height: 1.35;
+  word-break: keep-all;
 }
-.compare-after svg { width: 20px; height: 20px; flex: none; color: var(--green); }
+.compare-after svg { width: 22px; height: 22px; flex: none; color: var(--green); }
 
 .stats {
   display: flex;
