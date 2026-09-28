@@ -20,9 +20,9 @@
   --size-card-name: 27px;
   --size-desc: 25px;
   --size-effect: 22px;
-  --size-badge: 17px;
-  --size-conclusion: 22px;
-  --size-illust-label: 16px;
+  --size-badge: 18px;
+  --size-il: 13px;
+  --size-il-title: 14px;
   --size-table-head: 23px;
   --size-table: 20px;
   --size-stat-value: 52px;
@@ -46,34 +46,16 @@ body {
   flex-direction: column;
 }
 
-/* 1. 제목 + 배지 (전체 높이 약 13%) */
+/* 1. 제목 (전체 높이 약 11%) */
 .title-area {
-  height: 142px;
+  height: 124px;
   flex: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  padding-bottom: 16px;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 18px;
   border-bottom: 3px solid var(--navy);
 }
-.badges {
-  display: flex;
-  gap: 10px;
-}
-.badge {
-  height: 32px;
-  padding: 3px 18px 0;
-  border-radius: 16px;
-  font-size: var(--size-badge);
-  font-weight: 700;
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-.badge-orange { background: var(--orange); }
-.badge-navy { background: var(--navy); }
 .title {
   font-size: var(--size-title);
   font-weight: 700;
@@ -94,9 +76,32 @@ body {
   background: var(--navy-soft);
   display: flex;
   align-items: center;
+  padding: 0 9px 0 0;
+}
+.flow-steps {
+  flex: 1;
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 18px;
 }
+.badges {
+  display: flex;
+  gap: 8px;
+}
+.badge {
+  height: 34px;
+  padding: 3px 18px 0;
+  border-radius: 17px;
+  font-size: var(--size-badge);
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(27, 42, 107, 0.18);
+}
+.badge-orange { background: linear-gradient(135deg, #f6ad4e 0%, #e8871e 55%, #d0661a 100%); }
+.badge-navy { background: linear-gradient(135deg, #3b58c9 0%, #243a8f 50%, #1b2a6b 100%); }
 .flow-item {
   display: flex;
   align-items: center;
@@ -129,10 +134,10 @@ body {
 }
 .flow-icon svg { width: 21px; height: 21px; }
 
-/* 3. 핵심 기능 (전체 높이 약 50%) */
+/* 3. 핵심 기능 (전체 높이 약 57%) */
 .features {
   flex: none;
-  height: 564px;
+  height: 640px;
   margin-top: 16px;
   display: flex;
   flex-direction: column;
@@ -201,16 +206,19 @@ body {
 }
 .illust {
   flex: none;
-  height: 242px;
+  height: 320px;
   margin: 14px 16px 0;
+  padding: 10px;
   border-radius: 12px;
   background: #f4f6fb;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  font-size: var(--size-il);
+  font-weight: 500;
+  color: var(--text);
 }
-.illust > svg { width: 100%; height: 100%; }
 .desc {
   flex: 1;
   padding: 0 22px;
@@ -242,142 +250,251 @@ body {
 }
 .effect svg { width: 26px; height: 26px; margin-top: -2px; color: var(--green); }
 
-/* 카드③ 기술인 배치 일러스트 */
-.eng {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.eng-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.eng-card {
-  width: 122px;
-  height: 128px;
+/* 카드 일러스트 공통 */
+.il { width: 100%; }
+.il-box {
+  background: #fff;
   border: 1.5px solid var(--navy-line);
   border-radius: 10px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 8px 12px;
 }
-.eng-card-label {
-  font-size: var(--size-illust-label);
+.il-title {
+  font-size: var(--size-il-title);
   font-weight: 700;
-  color: var(--navy);
-}
-.eng-card svg.eng-figure { width: 56px; height: 56px; }
-.eng-career {
-  display: flex;
-  gap: 3px;
-}
-.eng-career i {
-  width: 14px;
-  height: 9px;
-  border-radius: 2px;
-  border: 1.5px solid var(--navy-line);
-}
-.eng-career.required i:nth-child(-n+3) { background: #c5cde6; border-color: #c5cde6; }
-.eng-career.owned i:nth-child(-n+4) { background: var(--green); border-color: var(--green); }
-.eng-link { width: 40px; height: 24px; color: var(--navy); }
-.eng-checks {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 6px 16px;
-  background: #fff;
-  border: 1.5px solid var(--navy-line);
-  border-radius: 8px;
-}
-.eng-checks li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: var(--size-illust-label);
-  font-weight: 500;
-  color: var(--navy);
-}
-.eng-checks svg { width: 18px; height: 18px; }
-
-/* 카드④ 간접비 일러스트 */
-.sheet {
-  width: 290px;
-  background: #fff;
-  border: 1.5px solid var(--navy-line);
-  border-radius: 10px;
-  padding: 14px 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.sheet-title {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-.sheet-title i { height: 8px; border-radius: 4px; background: var(--navy); width: 96px; }
-.sheet-title i + i { height: 6px; background: #d5dbea; width: 60px; }
-.sheet-head {
-  height: 22px;
-  border-radius: 5px;
-  background: var(--navy);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 10px;
-}
-.sheet-head i { height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.45); width: 60px; }
-.sheet-head i + i { width: 80px; margin-left: 20px; }
-.sheet-row {
-  height: 42px;
-  display: grid;
-  grid-template-columns: 100px 1fr 26px;
-  align-items: center;
-  gap: 8px;
-  padding: 0 4px;
-  border-bottom: 1px solid #e6e9f2;
-}
-.sheet-row:last-child { border-bottom: none; }
-.sheet-label {
-  font-size: var(--size-illust-label);
-  font-weight: 500;
   color: var(--navy);
   white-space: nowrap;
 }
-.sheet-cell {
-  height: 26px;
-  border-radius: 5px;
+.il svg { flex: none; }
+
+/* 카드① 면허 대조 */
+.lic { display: flex; flex-direction: column; gap: 8px; }
+.lic-head,
+.lic-row {
+  display: grid;
+  grid-template-columns: 66px 24px 1fr 46px;
+  align-items: center;
+  gap: 5px;
+}
+.lic-head {
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--navy-line);
+  font-size: var(--size-il-title);
+  font-weight: 700;
+  color: var(--navy);
+}
+.lic-head span { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.lic-head span.c { justify-content: center; }
+.lic-head svg { width: 18px; height: 18px; margin-top: -2px; }
+.lic-row { height: 46px; }
+.lic-work,
+.lic-name {
+  height: 36px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-  padding: 0 8px;
+  padding-top: 2px;
+  white-space: nowrap;
 }
-.sheet-row.ok .sheet-cell { background: var(--green-soft); }
-.sheet-row.ok .sheet-cell i { height: 6px; border-radius: 3px; background: var(--green); opacity: 0.55; width: 14px; }
-.sheet-row.ok .sheet-cell i:first-child { width: 36px; }
-.sheet-row.warn .sheet-cell { border: 2px dashed var(--orange); background: #fff8f0; }
-.sheet-row svg { width: 26px; height: 26px; }
+.lic-work { justify-content: center; background: #e3e8f5; color: var(--navy); font-weight: 700; }
+.lic-name {
+  padding-left: 7px;
+  background: #fff;
+  border: 1.5px solid var(--navy-line);
+  letter-spacing: -0.3px;
+}
+.lic-row.ng .lic-name { border: 1.5px dashed var(--red); }
+.lic-link { position: relative; height: 100%; display: grid; place-items: center; }
+.lic-link::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: 50%;
+  height: 2.5px;
+  transform: translateY(-50%);
+  background: currentColor;
+}
+.lic-row.ok .lic-link { color: var(--green); }
+.lic-row.ng .lic-link { color: var(--red); }
+.lic-row.ng .lic-link::before { background: repeating-linear-gradient(90deg, var(--red) 0 4px, transparent 4px 7px); }
+.lic-link svg { position: relative; width: 20px; height: 20px; }
+.lic-tag {
+  height: 26px;
+  border-radius: 13px;
+  padding-top: 2px;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.lic-row.ok .lic-tag { background: var(--green-soft); color: #16774f; }
+.lic-row.ng .lic-tag { background: #fde8e8; color: #c43535; }
 
-/* 4. 개선효과 + 결론 (전체 높이 약 27%) */
-.effects {
+/* 카드② 부당특약 */
+.cl { display: flex; align-items: center; gap: 18px; }
+.cl-doc {
+  position: relative;
+  width: 94px;
+  height: 262px;
   flex: none;
-  height: 304px;
-  margin-top: auto;
+  padding: 10px 8px;
+  background: #fff;
+  border: 1.5px solid var(--navy-line);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 13px;
 }
-.effects-main {
+.cl-doc-title {
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--navy-line);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  white-space: nowrap;
+}
+.cl-doc i { display: block; height: 6px; border-radius: 3px; background: #d5dbea; }
+.cl-doc i:nth-of-type(3n+2) { width: 80%; }
+.cl-doc i:nth-of-type(3n) { width: 90%; }
+.cl-doc i.hl { width: 100%; background: var(--red); box-shadow: 0 0 0 5px rgba(224, 72, 72, 0.25); }
+.cl-lens {
+  position: absolute;
+  right: -20px;
+  top: 128px;
+  width: 70px;
+  height: 70px;
+  padding-top: 3px;
+  border-radius: 50%;
+  border: 6px solid var(--navy);
+  background: rgba(236, 241, 255, 0.94);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.cl-lens::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+  bottom: -22px;
+  width: 11px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--navy);
+  transform: rotate(-45deg);
+}
+.cl-list {
   flex: 1;
-  min-height: 0;
+  padding: 12px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cl-list .il-title { padding-bottom: 7px; margin-bottom: 2px; border-bottom: 1.5px solid var(--navy-line); }
+.cl-item {
+  height: 36px;
+  padding-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  letter-spacing: -0.4px;
+}
+.cl-item svg { width: 17px; height: 17px; margin-top: -2px; color: var(--orange); }
+
+/* 카드③ 기술인 배치 */
+.en { display: flex; align-items: stretch; gap: 4px; }
+.en-link { align-self: center; }
+.en-worker {
+  width: 112px;
+  flex: none;
+  padding: 14px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.en-figure { width: 88px; height: 88px; }
+.en-checks {
+  list-style: none;
+  align-self: stretch;
+  margin-top: 4px;
+  padding: 6px 0 0 12px;
+  border-top: 1.5px solid var(--navy-line);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.en-checks li { height: 32px; padding-top: 2px; display: flex; align-items: center; gap: 7px; font-weight: 700; color: var(--navy); }
+.en-checks svg { width: 18px; height: 18px; margin-top: -2px; color: var(--green); }
+.en-link { width: 26px; height: 22px; flex: none; color: var(--navy); }
+.en-std {
+  flex: 1;
+  padding: 14px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.en-std .il-title { padding-bottom: 7px; margin-bottom: 2px; border-bottom: 1.5px solid var(--navy-line); text-align: center; }
+.en-tr {
+  height: 46px;
+  padding: 2px 7px 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+.en-th { height: 26px; font-size: 11.5px; font-weight: 700; color: var(--gray-text); }
+.en-tr.hit { background: var(--green-soft); outline: 1.5px solid var(--green); color: #16774f; font-weight: 700; }
+
+/* 카드④ 간접비 */
+.oh { display: flex; flex-direction: column; gap: 8px; }
+.oh-sheet,
+.oh-items { padding: 9px 10px 10px; }
+.oh .il-title { padding-bottom: 7px; margin-bottom: 6px; border-bottom: 1.5px solid var(--navy-line); }
+.oh-sheet { display: flex; flex-direction: column; gap: 4px; }
+.oh-tr {
+  height: 22px;
+  display: grid;
+  grid-template-columns: 58px repeat(3, 1fr);
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+}
+.oh-tr span { padding-top: 2px; white-space: nowrap; font-weight: 700; color: var(--navy); }
+.oh-tr i { height: 6px; border-radius: 3px; background: #c5cde6; }
+.oh-tr i:nth-of-type(2) { width: 80%; }
+.oh-th { border-radius: 5px; background: var(--navy); font-size: 11.5px; }
+.oh-th span { color: #fff; text-align: center; }
+.oh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+}
+.oh-item {
+  height: 22px;
+  padding-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  letter-spacing: -0.5px;
+  font-size: 12.5px;
+}
+.oh-item svg { width: 15px; height: 15px; margin-top: -2px; color: var(--green); }
+.oh-item.ng { font-weight: 700; color: #b85f0e; }
+.oh-item.ng svg { color: var(--orange); }
+
+/* 4. 개선효과 (전체 높이 약 21%) */
+.effects {
+  flex: none;
+  height: 242px;
+  margin-top: auto;
   display: grid;
   grid-template-columns: 65fr 35fr;
   gap: 24px;
@@ -487,20 +604,3 @@ body {
 .stat-suffix { font-size: var(--size-stat-sub); font-weight: 700; color: #7fe0b3; }
 .stat-caption { font-size: var(--size-stat-caption); font-weight: 500; color: #c3cceb; }
 
-.conclusion {
-  flex: none;
-  height: 50px;
-  padding-top: 2px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #eaf0fb 0%, #e3f5ec 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  font-size: var(--size-conclusion);
-  font-weight: 500;
-  color: var(--navy);
-}
-.conclusion strong { font-weight: 700; }
-.conclusion-icon { width: 26px; height: 26px; margin-top: -2px; color: var(--green); }
-.conclusion-arrow { width: 26px; height: 26px; margin-top: -2px; color: var(--green); }

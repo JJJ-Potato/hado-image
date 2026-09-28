@@ -39,7 +39,35 @@
       "desc": "공사 내역별 필요 면허와 보유 면허 대조",
       "effect": "무자격 시공 사전 차단",
       "illust": {
-        "license": true
+        "license": {
+          "workHead": "공종",
+          "licHead": "필요 면허",
+          "tagHead": "보유",
+          "okLabel": "보유",
+          "ngLabel": "미보유",
+          "rows": [
+            {
+              "work": "토공",
+              "license": "지반조성·포장공사업",
+              "ok": true
+            },
+            {
+              "work": "포장공",
+              "license": "지반조성·포장공사업",
+              "ok": true
+            },
+            {
+              "work": "구조물공",
+              "license": "철근·콘크리트공사업",
+              "ok": true
+            },
+            {
+              "work": "강교공",
+              "license": "철강구조물공사업",
+              "ok": false
+            }
+          ]
+        }
       }
     },
     {
@@ -48,7 +76,18 @@
       "desc": "불리한 계약조항을 찾아 근거와 함께 표시",
       "effect": "불리한 조항 자동 탐지",
       "illust": {
-        "clause": true
+        "clause": {
+          "docTitle": "하도급 계약서",
+          "lens": "AI 분석",
+          "listTitle": "부당특약 유형 (예시)",
+          "types": [
+            "설계변경 대금조정 배제",
+            "물가변동 대금조정 배제",
+            "민원·산재 처리비용 전가",
+            "과도한 손해배상 책임",
+            "기타 불공정 조항"
+          ]
+        }
       }
     },
     {
@@ -58,12 +97,29 @@
       "effect": "부적격 배치 사전 차단",
       "illust": {
         "engineer": {
-          "standard": "배치 기준",
           "worker": "배치 기술인",
           "checks": [
             "등급",
             "분야",
             "경력"
+          ],
+          "stdTitle": "배치 기준 (예시)",
+          "amountHead": "공사예정금액",
+          "gradeHead": "등급",
+          "rows": [
+            {
+              "amount": "100억 이상",
+              "grade": "고급 이상"
+            },
+            {
+              "amount": "30억 이상",
+              "grade": "중급 이상",
+              "hit": true
+            },
+            {
+              "amount": "30억 미만",
+              "grade": "초급 이상"
+            }
           ]
         }
       }
@@ -75,13 +131,42 @@
       "effect": "간접비 누락 사전 차단",
       "illust": {
         "overhead": {
+          "sheetTitle": "하도급 내역서 집계표",
+          "cols": [
+            "공종",
+            "원도급",
+            "하도급",
+            "하도급률"
+          ],
+          "works": [
+            "토공",
+            "구조물공",
+            "포장공"
+          ],
+          "itemsTitle": "간접경비 항목 (예시)",
           "items": [
             {
-              "label": "사회보험료",
+              "label": "산재보험료",
               "ok": true
             },
             {
-              "label": "안전관리비",
+              "label": "고용보험료",
+              "ok": true
+            },
+            {
+              "label": "건강보험료",
+              "ok": true
+            },
+            {
+              "label": "연금보험료",
+              "ok": true
+            },
+            {
+              "label": "퇴직공제부금",
+              "ok": true
+            },
+            {
+              "label": "산업안전보건관리비",
               "ok": false
             }
           ]
@@ -129,9 +214,5 @@
       "suffix": "절감",
       "caption": "용역비 3.5억 + 인건비 연 5천만"
     }
-  ],
-  "conclusion": {
-    "from": "계약상 위험요인 사전 차단",
-    "to": "건설근로자 안전 확보 · 하도급사 권익 보호"
-  }
+  ]
 }
