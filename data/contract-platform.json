@@ -1,5 +1,5 @@
 {
-  "title": "AI로 불공정 하도급을 찾아내고, 건설현장 안전을 지키다",
+  "title": "<span class=\"hl-ai\">AI</span>로 <span class=\"hl-issue\">불공정 하도급</span>을 찾아내고, 건설현장 안전을 지키다",
   "flow": [
     { "icon": "upload", "label": "서류 등록" },
     { "icon": "chip", "label": "AI 검토", "bold": true, "larger": true },

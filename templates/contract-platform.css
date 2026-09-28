@@ -65,6 +65,13 @@ body {
   -webkit-text-fill-color: transparent;
   color: var(--navy);
 }
+.title .hl-ai,
+.title .hl-issue {
+  font-weight: 800;
+  -webkit-text-fill-color: currentColor;
+}
+.title .hl-ai { color: var(--green); }
+.title .hl-issue { color: var(--orange); }
 
 /* 2. 흐름 띠 */
 .flow {
