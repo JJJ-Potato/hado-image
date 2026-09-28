@@ -2,8 +2,8 @@
   "title": "AI 불공정 하도급 계약검증 플랫폼",
   "flow": [
     { "icon": "upload", "label": "서류 등록" },
-    { "icon": "chip", "label": "AI 검토" },
-    { "icon": "person-check", "label": "담당자 확인" },
+    { "icon": "chip", "label": "AI 검토", "bold": true, "larger": true },
+    { "icon": "person-check", "label": "담당자 확인", "bold": true },
     { "icon": "seal", "label": "결과 확정" }
   ],
   "basis": "법령 · 표준계약서 · 검토규칙 DB 기반 판단",
