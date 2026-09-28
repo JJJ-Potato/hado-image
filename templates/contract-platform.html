@@ -126,7 +126,7 @@
               {{#rows}}
               <div class="lic-row {{#ok}}ok{{/ok}}{{^ok}}ng{{/ok}}">
                 <span class="lic-work">{{work}}</span>
-                <span class="lic-link"><svg><use href="#icon-{{#ok}}check-circle{{/ok}}{{^ok}}x-circle{{/ok}}" /></svg>{{^ok}}<span class="ai-lens"><b>{{lens}}</b></span>{{/ok}}</span>
+                <span class="lic-link"><svg><use href="#icon-{{#ok}}check-circle{{/ok}}{{^ok}}x-circle{{/ok}}" /></svg></span>
                 <span class="lic-name">{{license}}</span>
                 <span class="lic-tag">{{#ok}}{{okLabel}}{{/ok}}{{^ok}}{{ngLabel}}{{/ok}}</span>
               </div>
@@ -138,7 +138,8 @@
             <div class="il cl">
               <div class="cl-doc">
                 <div class="cl-doc-title">{{docTitle}}</div>
-                <i></i><i></i><i></i><i class="hl"><span class="ai-lens"><b>{{lens}}</b></span></i><i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i class="hl"></i><i></i><i></i><i></i><i></i><i></i>
+                <div class="cl-lens">{{lens}}</div>
               </div>
               <div class="il-box cl-list">
                 <div class="il-title">{{listTitle}}</div>
@@ -160,12 +161,9 @@
                   {{/checks}}
                 </ul>
               </div>
-              <span class="en-link">
-                <svg viewBox="0 0 40 24">
+              <svg class="en-link" viewBox="0 0 40 24">
                 <path d="M6 12h28M11.5 6.5 6 12l5.5 5.5M28.5 6.5 34 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-                <span class="ai-lens"><b>{{lens}}</b></span>
-              </span>
               <div class="il-box en-std">
                 <div class="il-title">{{stdTitle}}</div>
                 <div class="en-tr en-th"><span>{{amountHead}}</span><span>{{gradeHead}}</span></div>
@@ -189,7 +187,7 @@
                 <div class="il-title">{{itemsTitle}}</div>
                 <div class="oh-grid">
                   {{#items}}
-                  <div class="oh-item{{^ok}} ng{{/ok}}"><svg><use href="#icon-{{#ok}}check-circle{{/ok}}{{^ok}}warn{{/ok}}" /></svg>{{label}}{{^ok}}<span class="ai-lens"><b>{{lens}}</b></span>{{/ok}}</div>
+                  <div class="oh-item{{^ok}} ng{{/ok}}"><svg><use href="#icon-{{#ok}}check-circle{{/ok}}{{^ok}}warn{{/ok}}" /></svg>{{label}}</div>
                   {{/items}}
                 </div>
               </div>
