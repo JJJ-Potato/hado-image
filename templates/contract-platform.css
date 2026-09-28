@@ -107,7 +107,14 @@ body {
   align-items: center;
   gap: 18px;
 }
-.flow-item:first-child .flow-arrow { display: none; }
+.flow-label {
+  padding-top: 2px;
+  font-size: var(--size-flow);
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.flow-label + .flow-item .flow-arrow { display: none; }
 .flow-arrow {
   width: 26px;
   height: 26px;
