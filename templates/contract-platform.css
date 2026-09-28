@@ -17,7 +17,7 @@
   --size-title: 53px;
   --size-flow: 23px;
   --size-basis: 24px;
-  --size-card-name: 25px;
+  --size-card-name: 27px;
   --size-desc: 25px;
   --size-time: 21px;
   --size-time-after: 29px;
@@ -151,9 +151,9 @@ body {
   box-shadow: 0 6px 16px rgba(27, 42, 107, 0.1);
 }
 .card-head {
-  height: 60px;
+  min-height: 60px;
   flex: none;
-  padding: 0 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -162,6 +162,7 @@ body {
 .card-no {
   width: 34px;
   height: 34px;
+  flex: none;
   border-radius: 50%;
   background: var(--navy);
   color: #fff;
@@ -172,9 +173,12 @@ body {
   padding-top: 3px;
 }
 .card-name {
+  flex: 1;
   font-size: var(--size-card-name);
   font-weight: 700;
   color: var(--navy);
+  line-height: 1.3;
+  word-break: keep-all;
 }
 .illust {
   flex: none;
