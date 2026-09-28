@@ -1,0 +1,6 @@
+construction-worker.svg
+
+Source: Noto Emoji by Google Inc. (https://github.com/googlefonts/noto-emoji)
+Obtained via the @iconify-json/noto npm package ("man construction worker: light skin tone").
+License: Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+Full terms: https://github.com/googlefonts/noto-emoji/blob/main/svg/LICENSE
