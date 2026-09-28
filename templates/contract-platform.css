@@ -14,7 +14,7 @@
   --gray-text: #7b818f;
   --text: #2b3350;
 
-  --size-title: 50px;
+  --size-title: 53px;
   --size-flow: 23px;
   --size-basis: 24px;
   --size-card-name: 25px;
@@ -58,8 +58,12 @@ body {
 .title {
   font-size: var(--size-title);
   font-weight: 700;
-  color: var(--navy);
   letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--navy) 0%, #2f4bb8 55%, var(--green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--navy);
 }
 
 /* 2. 흐름 띠 */
@@ -144,6 +148,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 0 6px 16px rgba(27, 42, 107, 0.1);
 }
 .card-head {
   height: 60px;
