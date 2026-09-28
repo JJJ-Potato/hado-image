@@ -203,10 +203,10 @@
   },
   "stats": [
     {
-      "icon": "search",
-      "value": "100%",
-      "suffix": "전수 검증",
-      "caption": "4대 핵심 항목, 누락·편차 없이 검토"
+      "icon": "seal",
+      "value": "국내 최초",
+      "suffix": "자체 개발",
+      "caption": "담당자가 놓치기 쉬운 위험까지 AI로 발견"
     },
     {
       "icon": "coins",
