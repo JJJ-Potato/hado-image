@@ -19,14 +19,14 @@
   --size-card-name: 27px;
   --size-desc: 25px;
   --size-effect: 22px;
-  --size-problem: 21px;
-  --size-panel-head: 25px;
-  --size-panel-point: 20px;
+  --size-problem: 23px;
+  --size-panel-head: 26px;
+  --size-panel-point: 21px;
   --size-il: 13px;
   --size-il-title: 14px;
   --size-stat-value: 46px;
   --size-stat-sub: 28px;
-  --size-stat-caption: 17px;
+  --size-stat-caption: 19px;
 }
 
 body {
@@ -138,8 +138,7 @@ body {
   font-size: var(--size-panel-head);
   font-weight: 700;
   line-height: 1.3;
-  word-break: keep-all;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 .before .panel-head { color: #3f4552; }
 .after .panel-head { color: var(--navy); }
@@ -174,7 +173,7 @@ body {
   box-shadow: 0 4px 10px rgba(30, 158, 106, 0.3);
 }
 .shift-arrow svg { width: 30px; height: 30px; }
-.shift-label { font-size: 15px; font-weight: 700; color: var(--green); white-space: nowrap; }
+.shift-label { display: flex; flex-direction: column; align-items: center; line-height: 1.2; font-size: 18px; font-weight: 700; color: var(--green); white-space: nowrap; }
 
 /* 3. 운영 절차 흐름 띠 */
 .flow {

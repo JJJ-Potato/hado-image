@@ -96,7 +96,7 @@
         {{/before}}
         <div class="shift">
           <span class="shift-arrow"><svg><use href="#icon-arrow" /></svg></span>
-          <span class="shift-label">{{shift}}</span>
+          <span class="shift-label">{{#shift}}<span>{{.}}</span>{{/shift}}</span>
         </div>
         {{#after}}
         <div class="panel after">
