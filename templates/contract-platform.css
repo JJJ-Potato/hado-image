@@ -18,7 +18,7 @@
   --size-flow: 23px;
   --size-basis: 24px;
   --size-card-name: 25px;
-  --size-desc: 23px;
+  --size-desc: 25px;
   --size-time: 21px;
   --size-time-after: 29px;
   --size-illust-label: 16px;
@@ -197,6 +197,7 @@ body {
   text-align: center;
   font-size: var(--size-desc);
   font-weight: 500;
+  color: #12162b;
   line-height: 1.4;
   word-break: keep-all;
   text-wrap: balance;
