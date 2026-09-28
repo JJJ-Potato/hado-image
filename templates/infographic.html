@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="theme.css" />
+  <style>
+    .canvas {
+      width: 1080px;
+      padding: 64px;
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .title {
+      font-size: var(--font-size-title);
+      font-weight: 800;
+    }
+    .subtitle {
+      font-size: var(--font-size-subtitle);
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+    .stats {
+      display: flex;
+      gap: 24px;
+    }
+    .stat-card {
+      flex: 1;
+      background: var(--color-surface);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .stat-value {
+      font-size: var(--font-size-stat-value);
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .stat-label {
+      font-size: var(--font-size-stat-label);
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+    .footer {
+      font-size: var(--font-size-footer);
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div>
+      <div class="title">{{title}}</div>
+      <div class="subtitle">{{subtitle}}</div>
+    </div>
+    <div class="stats">
+      {{#stats}}
+      <div class="stat-card">
+        <div class="stat-value">{{value}}</div>
+        <div class="stat-label">{{label}}</div>
+      </div>
+      {{/stats}}
+    </div>
+    <div class="footer">{{footer}}</div>
+  </div>
+</body>
+</html>

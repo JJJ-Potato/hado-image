@@ -1,0 +1,25 @@
+{
+  "name": "hado-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "render": "node scripts/render.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJJ-Potato/hado-image.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJJ-Potato/hado-image/issues"
+  },
+  "homepage": "https://github.com/JJJ-Potato/hado-image#readme",
+  "dependencies": {
+    "mustache": "^4.2.0",
+    "playwright": "^1.63.0"
+  }
+}
