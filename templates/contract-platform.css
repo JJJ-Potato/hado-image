@@ -16,13 +16,12 @@
 
   --size-title: 53px;
   --size-flow: 23px;
-  --size-basis: 24px;
   --size-card-name: 27px;
   --size-desc: 25px;
   --size-effect: 22px;
   --size-problem: 21px;
-  --size-panel-head: 22px;
-  --size-panel-point: 17.5px;
+  --size-panel-head: 25px;
+  --size-panel-point: 20px;
   --size-il: 13px;
   --size-il-title: 14px;
   --size-stat-value: 46px;
@@ -90,7 +89,7 @@ body {
 .problem b { font-weight: 700; color: var(--navy); }
 .problem b.em { color: #d0661a; }
 .panels {
-  height: 168px;
+  height: 160px;
   display: grid;
   grid-template-columns: 1fr 84px 1fr;
 }
@@ -98,8 +97,8 @@ body {
   border-radius: 16px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 0 22px 0 12px;
+  gap: 24px;
+  padding: 0 24px 0 20px;
 }
 .panel.before { background: #f3f4f6; border: 1.5px solid #e2e4e9; }
 .panel.after {
@@ -107,33 +106,27 @@ body {
   border: 2px solid var(--navy);
   box-shadow: 0 6px 16px rgba(27, 42, 107, 0.12);
 }
-.scene { position: relative; width: 250px; height: 150px; flex: none; }
-.scene > * { position: absolute; }
-.before .scene img { filter: grayscale(1) brightness(1.08); opacity: 0.8; }
-.before .scene .s-warn { filter: none; opacity: 1; }
-.before .s-doc { width: 84px; height: 84px; }
-.d1 { left: 6px; top: 50px; }
-.d2 { left: 30px; top: 34px; }
-.d3 { left: 54px; top: 18px; }
-.before .s-person { left: 150px; top: 46px; width: 98px; height: 98px; }
-.q1 { left: 200px; top: 6px; width: 34px; height: 34px; }
-.q2 { left: 156px; top: 16px; width: 26px; height: 26px; }
-.s-warn { left: 110px; top: 98px; width: 38px; height: 38px; }
-.s-db { left: 2px; top: 82px; width: 58px; height: 58px; }
-.after .s-doc { width: 62px; height: 62px; }
-.a1 { left: 14px; top: 14px; transform: rotate(-6deg); }
-.a2 { left: 36px; top: 6px; transform: rotate(5deg); }
-.s-ai { left: 50px; top: 42px; width: 76px; height: 76px; }
-.s-arrow { left: 126px; top: 66px; width: 28px; height: 28px; color: var(--green); }
-.after .s-person { left: 156px; top: 40px; width: 92px; height: 92px; }
-.s-check { left: 214px; top: 98px; width: 36px; height: 36px; }
-.panel-text { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.tile {
+  position: relative;
+  width: 124px;
+  height: 124px;
+  flex: none;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+}
+.before .tile { background: #e5e7eb; }
+.after .tile { background: #fff; box-shadow: 0 4px 12px rgba(27, 42, 107, 0.12); }
+.tile-main { width: 84px; height: 84px; }
+.tile-badge { position: absolute; right: 8px; bottom: 8px; width: 38px; height: 38px; }
+.before .tile img { filter: grayscale(1) brightness(1.05); opacity: 0.85; }
+.panel-text { min-width: 0; display: flex; flex-direction: column; gap: 9px; }
 .panel-tag {
   align-self: flex-start;
-  height: 28px;
-  padding: 3px 14px 0;
-  border-radius: 14px;
-  font-size: 16px;
+  height: 30px;
+  padding: 3px 16px 0;
+  border-radius: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #fff;
   display: flex;
@@ -154,15 +147,15 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   font-size: var(--size-panel-point);
   font-weight: 500;
 }
 .panel-text li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .before li { color: #4f5563; }
-.before li::before { content: ""; width: 6px; height: 6px; flex: none; margin-top: -2px; border-radius: 50%; background: #9ca3af; }
+.before li::before { content: ""; width: 7px; height: 7px; flex: none; margin-top: -2px; border-radius: 50%; background: #9ca3af; }
 .after li { color: var(--text); }
-.after li svg { width: 18px; height: 18px; flex: none; margin-top: -3px; color: var(--green); }
+.after li svg { width: 21px; height: 21px; flex: none; margin-top: -3px; color: var(--green); }
 .shift {
   display: flex;
   flex-direction: column;
@@ -242,27 +235,12 @@ body {
 /* 4. 핵심 기능 */
 .features {
   flex: none;
-  height: 588px;
+  height: 596px;
   margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.basis {
-  flex: none;
-  height: 46px;
-  border-radius: 10px;
-  background: var(--navy);
-  color: #fff;
-  font-size: var(--size-basis);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.basis svg { width: 24px; height: 24px; }
-
 .cards {
   flex: 1;
   display: grid;
@@ -311,7 +289,7 @@ body {
 }
 .illust {
   flex: none;
-  height: 292px;
+  height: 324px;
   margin: 14px 16px 0;
   padding: 10px;
   border-radius: 12px;
