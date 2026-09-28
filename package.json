@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "render": "node scripts/render.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "render:contract": "node scripts/render.js templates/contract-platform.html data/contract-platform.json output/contract-platform.png"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   "homepage": "https://github.com/JJJ-Potato/hado-image#readme",
   "dependencies": {
     "mustache": "^4.2.0",
-    "playwright": "^1.63.0"
+    "playwright": "1.56.1"
   }
 }

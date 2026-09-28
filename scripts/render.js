@@ -15,21 +15,24 @@ async function main() {
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
 
-  // 상대경로(theme.css, ../fonts/*)가 풀리도록 템플릿과 같은 폴더에 임시로 렌더링한 뒤 file://로 연다
+  // 상대경로(css, ../fonts/*)가 풀리도록 템플릿과 같은 폴더에 임시로 렌더링한 뒤 file://로 연다
   const tmpPath = path.join(path.dirname(templatePath), `.__render_${Date.now()}.html`);
   fs.writeFileSync(tmpPath, html, "utf-8");
 
-  const browser = await chromium.launch({
-    executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
-  });
+  let browser;
   try {
+    browser = await chromium.launch();
     const page = await browser.newPage({ deviceScaleFactor: 2 });
     await page.goto(`file://${tmpPath}`, { waitUntil: "networkidle" });
-    const canvas = await page.$(".canvas");
-    await (canvas || page).screenshot({ path: outPath });
+    await page.evaluate(() => document.fonts.ready);
+
+    const canvas = page.locator(".canvas");
+    const box = await canvas.boundingBox();
+    await page.setViewportSize({ width: Math.ceil(box.width), height: Math.ceil(box.height) });
+    await canvas.screenshot({ path: outPath });
   } finally {
-    await browser.close();
-    fs.unlinkSync(tmpPath);
+    await browser?.close();
+    fs.rmSync(tmpPath, { force: true });
   }
 
   console.log(`저장됨: ${outPath}`);

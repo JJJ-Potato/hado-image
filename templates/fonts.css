@@ -1,0 +1,52 @@
+/* GmarketSans: 공식 배포 TTF(GmarketSansTTF*.ttf)를 fonts/에 넣으면 해당 굵기가 자동으로 적용됨 */
+@font-face {
+  font-family: "GmarketSans";
+  src: url("../fonts/GmarketSansLight.woff") format("woff"),
+       url("../fonts/GmarketSansTTFLight.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "GmarketSans";
+  src: url("../fonts/GmarketSansMedium.woff") format("woff"),
+       url("../fonts/GmarketSansTTFMedium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "GmarketSans";
+  src: url("../fonts/GmarketSansBold.woff") format("woff"),
+       url("../fonts/GmarketSansTTFBold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+/* GmarketSans에 없는 기호(→, · 등) 대체용 */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
