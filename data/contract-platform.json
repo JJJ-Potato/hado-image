@@ -1,10 +1,35 @@
 {
+  "badges": [
+    {
+      "label": "국내 최초",
+      "tone": "orange"
+    },
+    {
+      "label": "AI 코딩 자체 개발",
+      "tone": "navy"
+    }
+  ],
   "title": "AI로 불공정 하도급을 찾아내고, 건설현장 안전을 지키다",
   "flow": [
-    { "icon": "upload", "label": "서류 등록" },
-    { "icon": "chip", "label": "AI 검토", "bold": true, "larger": true },
-    { "icon": "person-check", "label": "담당자 확인", "bold": true },
-    { "icon": "seal", "label": "결과 확정" }
+    {
+      "icon": "upload",
+      "label": "서류 등록"
+    },
+    {
+      "icon": "chip",
+      "label": "AI 검토",
+      "bold": true,
+      "larger": true
+    },
+    {
+      "icon": "person-check",
+      "label": "담당자 확인",
+      "bold": true
+    },
+    {
+      "icon": "seal",
+      "label": "결과 확정"
+    }
   ],
   "basis": "법령 · 표준계약서 · 검토규칙 DB 기반 판단",
   "features": [
@@ -12,26 +37,34 @@
       "no": "1",
       "name": "하도급사 면허 확인",
       "desc": "공사 내역별 필요 면허와 보유 면허 대조",
-      "time": { "before": "60분", "after": "2분" },
-      "illust": { "license": true }
+      "effect": "무자격 시공 사전 차단",
+      "illust": {
+        "license": true
+      }
     },
     {
       "no": "2",
       "name": "부당특약 여부 판별",
       "desc": "불리한 계약조항을 찾아 근거와 함께 표시",
-      "time": { "before": "30분", "after": "2분" },
-      "illust": { "clause": true }
+      "effect": "불리한 조항 자동 탐지",
+      "illust": {
+        "clause": true
+      }
     },
     {
       "no": "3",
       "name": "기술인 배치 적정성",
       "desc": "공사 배치기준 대비 기술인 등급·경력 충족 여부 확인",
-      "time": { "before": "30분", "after": "2분" },
+      "effect": "부적격 배치 사전 차단",
       "illust": {
         "engineer": {
           "standard": "배치 기준",
           "worker": "배치 기술인",
-          "checks": ["등급", "분야", "경력"]
+          "checks": [
+            "등급",
+            "분야",
+            "경력"
+          ]
         }
       }
     },
@@ -39,12 +72,18 @@
       "no": "4",
       "name": "간접경비 반영 검토",
       "desc": "하수급인 간접비 반영 여부와 적정성 확인",
-      "time": { "before": "30분", "after": "1분" },
+      "effect": "간접비 누락 사전 차단",
       "illust": {
         "overhead": {
           "items": [
-            { "label": "사회보험료", "ok": true },
-            { "label": "안전관리비", "ok": false }
+            {
+              "label": "사회보험료",
+              "ok": true
+            },
+            {
+              "label": "안전관리비",
+              "ok": false
+            }
           ]
         }
       }
@@ -54,14 +93,45 @@
     "before": "기존",
     "after": "개선",
     "rows": [
-      { "label": "검토주체", "before": "담당자 개인 역량", "after": "AI가 의심사항 탐지, 담당자가 확인" },
-      { "label": "검토기준", "before": "법령·지침 직접 대조, 경험 의존", "after": "판단 기준·규칙 DB화" },
-      { "label": "검토항목", "before": "담당자별 상이, 누락 우려", "after": "핵심 항목 100% 검토" },
-      { "label": "개발방법", "before": "외부 용역 약 3.5억원", "after": "AI 코딩 자체 개발, 예산 0원" }
+      {
+        "label": "검토주체",
+        "before": "담당자 개인 역량",
+        "after": "AI가 의심사항 탐지, 담당자가 확인"
+      },
+      {
+        "label": "검토기준",
+        "before": "법령·지침 직접 대조, 경험 의존",
+        "after": "판단 기준·규칙 DB화"
+      },
+      {
+        "label": "검토항목",
+        "before": "담당자별 상이, 누락 우려",
+        "after": "핵심 항목 100% 검토"
+      },
+      {
+        "label": "개발방법",
+        "before": "외부 용역 약 3.5억원",
+        "after": "AI 코딩 자체 개발, 예산 0원"
+      }
     ]
   },
   "stats": [
-    { "icon": "clock", "from": "2.5시간", "to": "8분", "caption": "건당 검토시간" },
-    { "icon": "coins", "value": "4억원", "suffix": "절감", "caption": "용역비 3.5억 + 인건비 연 5천만" }
-  ]
+    {
+      "icon": "search",
+      "from": "492개 조항",
+      "to": "5개",
+      "suffix": "발견",
+      "caption": "사람 눈으로 놓치기 쉬운 의심 조항까지 찾아내다"
+    },
+    {
+      "icon": "coins",
+      "value": "4억원",
+      "suffix": "절감",
+      "caption": "용역비 3.5억 + 인건비 연 5천만"
+    }
+  ],
+  "conclusion": {
+    "from": "계약상 위험요인 사전 차단",
+    "to": "건설근로자 안전 확보 · 하도급사 권익 보호"
+  }
 }

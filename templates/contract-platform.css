@@ -19,14 +19,15 @@
   --size-basis: 24px;
   --size-card-name: 27px;
   --size-desc: 25px;
-  --size-time: 21px;
-  --size-time-after: 29px;
+  --size-effect: 22px;
+  --size-badge: 17px;
+  --size-conclusion: 22px;
   --size-illust-label: 16px;
   --size-table-head: 23px;
   --size-table: 20px;
-  --size-stat-value: 58px;
-  --size-stat-sub: 36px;
-  --size-stat-caption: 20px;
+  --size-stat-value: 52px;
+  --size-stat-sub: 30px;
+  --size-stat-caption: 18px;
 }
 
 body {
@@ -45,16 +46,34 @@ body {
   flex-direction: column;
 }
 
-/* 1. 제목 (전체 높이 약 11%) */
+/* 1. 제목 + 배지 (전체 높이 약 13%) */
 .title-area {
-  height: 124px;
+  height: 142px;
   flex: none;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-bottom: 16px;
   border-bottom: 3px solid var(--navy);
 }
+.badges {
+  display: flex;
+  gap: 10px;
+}
+.badge {
+  height: 32px;
+  padding: 3px 18px 0;
+  border-radius: 16px;
+  font-size: var(--size-badge);
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.badge-orange { background: var(--orange); }
+.badge-navy { background: var(--navy); }
 .title {
   font-size: var(--size-title);
   font-weight: 700;
@@ -69,7 +88,7 @@ body {
 /* 2. 흐름 띠 */
 .flow {
   flex: none;
-  margin-top: 16px;
+  margin-top: 14px;
   height: 50px;
   border-radius: 25px;
   background: var(--navy-soft);
@@ -110,11 +129,11 @@ body {
 }
 .flow-icon svg { width: 21px; height: 21px; }
 
-/* 3. 핵심 기능 (전체 높이 약 51%) */
+/* 3. 핵심 기능 (전체 높이 약 50%) */
 .features {
   flex: none;
-  height: 572px;
-  margin-top: 18px;
+  height: 564px;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -182,7 +201,7 @@ body {
 }
 .illust {
   flex: none;
-  height: 250px;
+  height: 242px;
   margin: 14px 16px 0;
   border-radius: 12px;
   background: #f4f6fb;
@@ -206,22 +225,22 @@ body {
   word-break: keep-all;
   text-wrap: balance;
 }
-.time {
+.effect {
   flex: none;
   height: 50px;
   margin: 0 16px 16px;
+  padding-top: 2px;
   border-radius: 10px;
   background: var(--green-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-size: var(--size-effect);
   font-weight: 700;
+  color: #16774f;
 }
-.time svg { width: 26px; height: 26px; color: var(--green); }
-.time-before { font-size: var(--size-time); color: var(--gray-text); font-weight: 500; }
-.time-arrow { font-family: "Pretendard", sans-serif; font-size: var(--size-time); color: var(--green); }
-.time-after { font-size: var(--size-time-after); color: var(--green); }
+.effect svg { width: 26px; height: 26px; margin-top: -2px; color: var(--green); }
 
 /* 카드③ 기술인 배치 일러스트 */
 .eng {
@@ -347,11 +366,18 @@ body {
 .sheet-row.warn .sheet-cell { border: 2px dashed var(--orange); background: #fff8f0; }
 .sheet-row svg { width: 26px; height: 26px; }
 
-/* 4. 개선효과 (전체 높이 약 27%) */
+/* 4. 개선효과 + 결론 (전체 높이 약 27%) */
 .effects {
   flex: none;
-  height: 300px;
+  height: 304px;
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.effects-main {
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: 65fr 35fr;
   gap: 24px;
@@ -359,8 +385,8 @@ body {
 .compare {
   display: grid;
   grid-template-columns: 112px 1fr 40px 1.3fr;
-  grid-template-rows: 46px repeat(4, 1fr);
-  gap: 7px 8px;
+  grid-template-rows: 42px repeat(4, 1fr);
+  gap: 6px 8px;
 }
 .compare-head {
   border-radius: 8px;
@@ -429,12 +455,12 @@ body {
   color: #fff;
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 0 32px;
+  gap: 18px;
+  padding: 0 26px;
 }
 .stat-icon {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   flex: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
@@ -442,16 +468,16 @@ body {
   place-items: center;
   color: #7fe0b3;
 }
-.stat-icon svg { width: 40px; height: 40px; }
+.stat-icon svg { width: 34px; height: 34px; }
 .stat-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 .stat-value {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: 10px;
   white-space: nowrap;
   line-height: 1;
 }
@@ -460,3 +486,21 @@ body {
 .stat-main { font-size: var(--size-stat-value); font-weight: 700; color: #fff; }
 .stat-suffix { font-size: var(--size-stat-sub); font-weight: 700; color: #7fe0b3; }
 .stat-caption { font-size: var(--size-stat-caption); font-weight: 500; color: #c3cceb; }
+
+.conclusion {
+  flex: none;
+  height: 50px;
+  padding-top: 2px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #eaf0fb 0%, #e3f5ec 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: var(--size-conclusion);
+  font-weight: 500;
+  color: var(--navy);
+}
+.conclusion strong { font-weight: 700; }
+.conclusion-icon { width: 26px; height: 26px; margin-top: -2px; color: var(--green); }
+.conclusion-arrow { width: 26px; height: 26px; margin-top: -2px; color: var(--green); }
