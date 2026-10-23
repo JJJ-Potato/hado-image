@@ -26,8 +26,8 @@
   --size-il-title: 14px;
   --size-stat-value: 42px;
   --size-stat-sub: 28px;
-  --size-stat-caption: 19px;
-  --size-stat-detail: 17px;
+  --size-stat-caption: 20px;
+  --size-stat-detail: 18px;
 }
 
 body {
@@ -616,8 +616,8 @@ body {
 }
 .stat-main { font-size: var(--size-stat-value); font-weight: 700; color: #fff; }
 .stat-suffix { font-size: var(--size-stat-sub); font-weight: 700; color: #7fe0b3; }
-.stat-caption { font-size: var(--size-stat-caption); font-weight: 500; color: #c3cceb; }
-/* 세부 실적이 붙는 블록: 캡션 두 줄, 수치는 흰색 강조 */
+.stat-caption { font-size: var(--size-stat-caption); font-weight: 500; color: #eef1fb; }
+/* 세부 실적이 붙는 블록: 캡션 두 줄, 수치는 민트색 강조 */
 .stat-caption.is-detailed {
   display: flex;
   flex-direction: column;
@@ -625,7 +625,6 @@ body {
   margin-top: 2px;
   font-size: var(--size-stat-detail);
   font-weight: 700;
-  color: #eef1fb;
   line-height: 1.15;
   white-space: nowrap;
 }
