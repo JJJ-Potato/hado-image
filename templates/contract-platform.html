@@ -239,7 +239,8 @@
             <span class="stat-main">{{value}}</span>
             <span class="stat-suffix">{{suffix}}</span>
           </div>
-          <span class="stat-caption">{{caption}}</span>
+          {{^detail}}<span class="stat-caption">{{caption}}</span>{{/detail}}
+          {{#detail}}<span class="stat-caption is-detailed"><span>{{caption}}</span><span>{{{detail}}}</span></span>{{/detail}}
         </div>
       </div>
       {{/stats}}

@@ -27,6 +27,7 @@
   --size-stat-value: 46px;
   --size-stat-sub: 28px;
   --size-stat-caption: 19px;
+  --size-stat-detail: 17px;
 }
 
 body {
@@ -234,7 +235,7 @@ body {
 /* 4. 핵심 기능 */
 .features {
   flex: none;
-  height: 596px;
+  height: 584px;
   margin-top: 16px;
   display: flex;
   flex-direction: column;
@@ -575,10 +576,10 @@ body {
 /* 5. 성과 */
 .stats {
   flex: none;
-  height: 100px;
+  height: 112px;
   margin-top: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr auto;
   gap: 20px;
 }
 .stat {
@@ -616,4 +617,15 @@ body {
 .stat-main { font-size: var(--size-stat-value); font-weight: 700; color: #fff; }
 .stat-suffix { font-size: var(--size-stat-sub); font-weight: 700; color: #7fe0b3; }
 .stat-caption { font-size: var(--size-stat-caption); font-weight: 500; color: #c3cceb; }
+/* 세부 실적이 붙는 블록: 캡션 두 줄, 수치는 흰색 강조 */
+.stat-caption.is-detailed {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 2px;
+  font-size: var(--size-stat-detail);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.stat-caption b { font-weight: 700; color: #fff; }
 
