@@ -24,7 +24,7 @@
   --size-panel-point: 21px;
   --size-il: 13px;
   --size-il-title: 14px;
-  --size-stat-value: 46px;
+  --size-stat-value: 42px;
   --size-stat-sub: 28px;
   --size-stat-caption: 19px;
   --size-stat-detail: 17px;
@@ -624,8 +624,10 @@ body {
   gap: 5px;
   margin-top: 2px;
   font-size: var(--size-stat-detail);
+  font-weight: 700;
+  color: #eef1fb;
   line-height: 1.15;
   white-space: nowrap;
 }
-.stat-caption b { font-weight: 700; color: #fff; }
+.stat-caption b { font-weight: 700; color: #7fe0b3; }
 
